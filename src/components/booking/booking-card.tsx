@@ -23,14 +23,14 @@ export function BookingCard({ booking, showActions = true }: BookingCardProps) {
       <CardContent className="pt-6">
         <div className="flex items-start justify-between">
           <div className="space-y-1">
-            <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">
+            <h3 className="font-semibold text-foreground">
               {LESSON_TYPE_LABELS[booking.lesson_type]}
             </h3>
-            <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+            <div className="flex items-center gap-2 text-sm text-foreground-muted">
               <Calendar className="h-4 w-4" />
               {formatDateTime(booking.scheduled_at)}
             </div>
-            <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+            <div className="flex items-center gap-2 text-sm text-foreground-muted">
               <Clock className="h-4 w-4" />
               {formatDuration(LESSON_TYPE_DURATIONS[booking.lesson_type])}
             </div>
@@ -39,7 +39,7 @@ export function BookingCard({ booking, showActions = true }: BookingCardProps) {
         </div>
 
         {booking.notes && (
-          <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
+          <p className="mt-4 text-sm text-foreground-muted">
             {booking.notes}
           </p>
         )}

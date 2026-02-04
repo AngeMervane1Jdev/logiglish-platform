@@ -42,7 +42,7 @@ export function LessonTypeSelector({
 
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+      <h3 className="text-lg font-semibold text-foreground">
         Select Lesson Type
       </h3>
       <div className="grid gap-4 sm:grid-cols-2">
@@ -80,8 +80,8 @@ export function LessonTypeSelector({
               {isLocked && (
                 <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-zinc-100/80 dark:bg-zinc-900/80">
                   <div className="flex flex-col items-center gap-2 text-center">
-                    <Lock className="h-6 w-6 text-zinc-500" />
-                    <span className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                    <Lock className="h-6 w-6 text-foreground-muted" />
+                    <span className="text-sm font-medium text-foreground-muted">
                       Upgrade to Premium
                     </span>
                   </div>
@@ -114,14 +114,14 @@ export function LessonTypeSelector({
 
               {/* Content */}
               <div className="mt-6">
-                <h4 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
+                <h4 className="text-base font-semibold text-foreground">
                   {LESSON_TYPE_LABELS[lesson.type]}
                 </h4>
-                <div className="mt-1 flex items-center gap-1 text-sm text-zinc-500 dark:text-zinc-400">
+                <div className="mt-1 flex items-center gap-1 text-sm text-foreground-muted">
                   <Clock className="h-4 w-4" />
                   {LESSON_TYPE_DURATIONS[lesson.type]} minutes
                 </div>
-                <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                <p className="mt-2 text-sm text-foreground-muted">
                   {lesson.description}
                 </p>
               </div>

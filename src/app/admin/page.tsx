@@ -72,10 +72,10 @@ export default async function AdminDashboardPage() {
     <div className="space-y-8">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+        <h1 className="text-3xl font-bold text-foreground">
           Admin Dashboard
         </h1>
-        <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+        <p className="mt-1 text-foreground-muted">
           Overview of your platform activity and metrics.
         </p>
       </div>
@@ -88,11 +88,11 @@ export default async function AdminDashboardPage() {
             <Card key={stat.name}>
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-sm font-medium">{stat.name}</CardTitle>
-                <Icon className="h-4 w-4 text-zinc-500" />
+                <Icon className="h-4 w-4 text-foreground-muted" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">{stat.value}</div>
-                <p className="text-xs text-zinc-500">{stat.description}</p>
+                <p className="text-xs text-foreground-muted">{stat.description}</p>
               </CardContent>
             </Card>
           );
@@ -109,50 +109,50 @@ export default async function AdminDashboardPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <a
               href="/admin/bookings"
-              className="flex items-center gap-3 rounded-lg border border-zinc-200 p-4 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-900"
+              className="flex items-center gap-3 rounded-lg border border-border p-4 transition-colors hover:bg-accent"
             >
-              <Calendar className="h-8 w-8 text-zinc-500" />
+              <Calendar className="h-8 w-8 text-foreground-muted" />
               <div>
-                <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                <p className="font-medium text-foreground">
                   Manage Bookings
                 </p>
-                <p className="text-sm text-zinc-500">View and edit bookings</p>
+                <p className="text-sm text-foreground-muted">View and edit bookings</p>
               </div>
             </a>
             <a
               href="/admin/messages"
-              className="flex items-center gap-3 rounded-lg border border-zinc-200 p-4 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-900"
+              className="flex items-center gap-3 rounded-lg border border-border p-4 transition-colors hover:bg-accent"
             >
-              <MessageSquare className="h-8 w-8 text-zinc-500" />
+              <MessageSquare className="h-8 w-8 text-foreground-muted" />
               <div>
-                <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                <p className="font-medium text-foreground">
                   Messages
                 </p>
-                <p className="text-sm text-zinc-500">View student messages</p>
+                <p className="text-sm text-foreground-muted">View student messages</p>
               </div>
             </a>
             <a
               href="/admin/users"
-              className="flex items-center gap-3 rounded-lg border border-zinc-200 p-4 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-900"
+              className="flex items-center gap-3 rounded-lg border border-border p-4 transition-colors hover:bg-accent"
             >
-              <Users className="h-8 w-8 text-zinc-500" />
+              <Users className="h-8 w-8 text-foreground-muted" />
               <div>
-                <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                <p className="font-medium text-foreground">
                   Users
                 </p>
-                <p className="text-sm text-zinc-500">Manage user accounts</p>
+                <p className="text-sm text-foreground-muted">Manage user accounts</p>
               </div>
             </a>
             <a
               href="/admin/topics"
-              className="flex items-center gap-3 rounded-lg border border-zinc-200 p-4 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-900"
+              className="flex items-center gap-3 rounded-lg border border-border p-4 transition-colors hover:bg-accent"
             >
-              <CheckCircle className="h-8 w-8 text-zinc-500" />
+              <CheckCircle className="h-8 w-8 text-foreground-muted" />
               <div>
-                <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                <p className="font-medium text-foreground">
                   Topics
                 </p>
-                <p className="text-sm text-zinc-500">Manage learning topics</p>
+                <p className="text-sm text-foreground-muted">Manage learning topics</p>
               </div>
             </a>
           </div>

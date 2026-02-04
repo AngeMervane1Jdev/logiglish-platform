@@ -172,21 +172,21 @@ export default function AdminBookingDetailPage() {
               {/* Schedule */}
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="flex items-start gap-3">
-                  <Calendar className="mt-0.5 h-5 w-5 text-zinc-500" />
+                  <Calendar className="mt-0.5 h-5 w-5 text-foreground-muted" />
                   <div>
-                    <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                    <p className="font-medium text-foreground">
                       {formatDate(booking.scheduled_at)}
                     </p>
-                    <p className="text-sm text-zinc-500">Scheduled date</p>
+                    <p className="text-sm text-foreground-muted">Scheduled date</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Clock className="mt-0.5 h-5 w-5 text-zinc-500" />
+                  <Clock className="mt-0.5 h-5 w-5 text-foreground-muted" />
                   <div>
-                    <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                    <p className="font-medium text-foreground">
                       {formatTime(booking.scheduled_at)}
                     </p>
-                    <p className="text-sm text-zinc-500">
+                    <p className="text-sm text-foreground-muted">
                       {formatDuration(LESSON_TYPE_DURATIONS[booking.lesson_type])}
                     </p>
                   </div>
@@ -194,12 +194,12 @@ export default function AdminBookingDetailPage() {
               </div>
 
               {/* Meeting Link Section */}
-              <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900">
+              <div className="rounded-lg border border-border bg-background-secondary p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-start gap-3 flex-1">
-                    <Video className="mt-0.5 h-5 w-5 text-zinc-500" />
+                    <Video className="mt-0.5 h-5 w-5 text-foreground-muted" />
                     <div className="flex-1">
-                      <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                      <p className="font-medium text-foreground">
                         Meeting Link
                       </p>
 
@@ -220,7 +220,7 @@ export default function AdminBookingDetailPage() {
                       )}
 
                       {!isEditingMeetingLink && !booking.video_link && (
-                        <p className="mt-1 text-sm text-zinc-500">
+                        <p className="mt-1 text-sm text-foreground-muted">
                           No meeting link added yet
                         </p>
                       )}
@@ -331,10 +331,10 @@ export default function AdminBookingDetailPage() {
               {/* Notes */}
               {booking.notes && (
                 <div>
-                  <h3 className="font-medium text-zinc-900 dark:text-zinc-50">
+                  <h3 className="font-medium text-foreground">
                     Notes
                   </h3>
-                  <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                  <p className="mt-1 text-sm text-foreground-muted">
                     {booking.notes}
                   </p>
                 </div>
@@ -342,7 +342,7 @@ export default function AdminBookingDetailPage() {
 
               {/* Calendar Event Info */}
               {booking.calendar_event_id && (
-                <div className="text-sm text-zinc-500">
+                <div className="text-sm text-foreground-muted">
                   <strong>Calendar Event ID:</strong>{" "}
                   {booking.calendar_event_id.slice(-12)}
                 </div>
@@ -359,25 +359,25 @@ export default function AdminBookingDetailPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-3">
-                <User className="mt-0.5 h-5 w-5 text-zinc-500" />
+                <User className="mt-0.5 h-5 w-5 text-foreground-muted" />
                 <div>
-                  <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                  <p className="font-medium text-foreground">
                     {booking.student?.full_name || "Unknown"}
                   </p>
-                  <p className="text-sm text-zinc-500">Full name</p>
+                  <p className="text-sm text-foreground-muted">Full name</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-5 w-5 text-zinc-500" />
+                <Mail className="mt-0.5 h-5 w-5 text-foreground-muted" />
                 <div>
-                  <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                  <p className="font-medium text-foreground">
                     {booking.student?.email || "No email"}
                   </p>
-                  <p className="text-sm text-zinc-500">Email address</p>
+                  <p className="text-sm text-foreground-muted">Email address</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Crown className="mt-0.5 h-5 w-5 text-zinc-500" />
+                <Crown className="mt-0.5 h-5 w-5 text-foreground-muted" />
                 <div>
                   <Badge
                     variant={
@@ -388,7 +388,7 @@ export default function AdminBookingDetailPage() {
                   >
                     {booking.student?.subscription_plan || "basic"}
                   </Badge>
-                  <p className="mt-1 text-sm text-zinc-500">Subscription plan</p>
+                  <p className="mt-1 text-sm text-foreground-muted">Subscription plan</p>
                 </div>
               </div>
             </CardContent>
@@ -454,13 +454,13 @@ export default function AdminBookingDetailPage() {
               )}
 
               {booking.status === "cancelled" && (
-                <p className="text-sm text-zinc-500 text-center py-2">
+                <p className="text-sm text-foreground-muted text-center py-2">
                   This booking has been cancelled
                 </p>
               )}
 
               {booking.status === "completed" && (
-                <p className="text-sm text-zinc-500 text-center py-2">
+                <p className="text-sm text-foreground-muted text-center py-2">
                   This booking has been completed
                 </p>
               )}
@@ -517,7 +517,7 @@ export default function AdminBookingDetailPage() {
             </DialogDescription>
           </DialogHeader>
           <div className="py-4">
-            <label className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
+            <label className="text-sm font-medium text-foreground">
               Reason for cancellation <span className="text-red-600">*</span>
             </label>
             <Textarea

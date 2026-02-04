@@ -102,7 +102,7 @@ export default function AdminRegisterPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 p-4 dark:bg-zinc-900">
+    <div className="flex min-h-screen items-center justify-center bg-background-secondary p-4">
       <div className="w-full max-w-md">
         {/* Back Button */}
         <Button variant="ghost" asChild className="mb-4">
@@ -145,7 +145,7 @@ export default function AdminRegisterPage() {
             {step === "request" ? (
               <form onSubmit={handleRequest} className="space-y-4">
                 <div>
-                  <label className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
+                  <label className="text-sm font-medium text-foreground">
                     Full Name
                   </label>
                   <Input
@@ -160,7 +160,7 @@ export default function AdminRegisterPage() {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
+                  <label className="text-sm font-medium text-foreground">
                     Email
                   </label>
                   <Input
@@ -174,7 +174,7 @@ export default function AdminRegisterPage() {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
+                  <label className="text-sm font-medium text-foreground">
                     Password
                   </label>
                   <Input
@@ -186,7 +186,7 @@ export default function AdminRegisterPage() {
                     minLength={8}
                     disabled={isLoading}
                   />
-                  <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                  <p className="mt-1 text-xs text-foreground-muted">
                     Must be at least 8 characters
                   </p>
                 </div>
@@ -205,7 +205,7 @@ export default function AdminRegisterPage() {
             ) : (
               <form onSubmit={handleVerify} className="space-y-4">
                 <div>
-                  <label className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
+                  <label className="text-sm font-medium text-foreground">
                     Authorization Code
                   </label>
                   <Input
@@ -218,13 +218,13 @@ export default function AdminRegisterPage() {
                     disabled={isLoading}
                     className="text-center text-2xl tracking-widest"
                   />
-                  <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                  <p className="mt-1 text-xs text-foreground-muted">
                     Enter the 6-digit code sent to {email}
                   </p>
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
+                  <label className="text-sm font-medium text-foreground">
                     Password
                   </label>
                   <Input
@@ -236,7 +236,7 @@ export default function AdminRegisterPage() {
                     minLength={8}
                     disabled={isLoading}
                   />
-                  <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                  <p className="mt-1 text-xs text-foreground-muted">
                     Re-enter your password to complete registration
                   </p>
                 </div>
@@ -267,7 +267,7 @@ export default function AdminRegisterPage() {
             )}
 
             <div className="mt-6 text-center text-sm">
-              <p className="text-zinc-500 dark:text-zinc-400">
+              <p className="text-foreground-muted">
                 Already have an account?{" "}
                 <Link
                   href="/login"

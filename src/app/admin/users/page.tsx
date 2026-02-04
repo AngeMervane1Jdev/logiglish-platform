@@ -79,10 +79,10 @@ export default function AdminUsersPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h1 className="text-3xl font-bold text-foreground">
             Users
           </h1>
-          <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+          <p className="mt-1 text-foreground-muted">
             Manage user accounts and permissions.
           </p>
         </div>
@@ -139,27 +139,27 @@ export default function AdminUsersPage() {
               ))}
             </div>
           ) : users.length === 0 ? (
-            <div className="py-12 text-center text-zinc-500">
+            <div className="py-12 text-center text-foreground-muted">
               No users found
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-zinc-200 dark:border-zinc-800">
-                    <th className="pb-3 text-left text-sm font-medium text-zinc-500">
+                  <tr className="border-b border-border">
+                    <th className="pb-3 text-left text-sm font-medium text-foreground-muted">
                       User
                     </th>
-                    <th className="pb-3 text-left text-sm font-medium text-zinc-500">
+                    <th className="pb-3 text-left text-sm font-medium text-foreground-muted">
                       Role
                     </th>
-                    <th className="pb-3 text-left text-sm font-medium text-zinc-500">
+                    <th className="pb-3 text-left text-sm font-medium text-foreground-muted">
                       Subscription
                     </th>
-                    <th className="pb-3 text-left text-sm font-medium text-zinc-500">
+                    <th className="pb-3 text-left text-sm font-medium text-foreground-muted">
                       Joined
                     </th>
-                    <th className="pb-3 text-right text-sm font-medium text-zinc-500">
+                    <th className="pb-3 text-right text-sm font-medium text-foreground-muted">
                       Actions
                     </th>
                   </tr>
@@ -168,14 +168,14 @@ export default function AdminUsersPage() {
                   {users.map((user) => (
                     <tr
                       key={user.id}
-                      className="border-b border-zinc-100 dark:border-zinc-800/50"
+                      className="border-b border-border"
                     >
                       <td className="py-4">
                         <div>
-                          <div className="font-medium text-zinc-900 dark:text-zinc-50">
+                          <div className="font-medium text-foreground">
                             {user.full_name || "No name"}
                           </div>
-                          <div className="text-sm text-zinc-500">
+                          <div className="text-sm text-foreground-muted">
                             {user.email}
                           </div>
                         </div>
@@ -216,7 +216,7 @@ export default function AdminUsersPage() {
                           )}
                         </div>
                       </td>
-                      <td className="py-4 text-sm text-zinc-600 dark:text-zinc-400">
+                      <td className="py-4 text-sm text-foreground-muted">
                         {format(new Date(user.created_at), "MMM d, yyyy")}
                       </td>
                       <td className="py-4 text-right">

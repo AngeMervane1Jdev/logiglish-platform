@@ -133,10 +133,10 @@ export default function BookPage() {
     <div className="space-y-6">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+        <h1 className="text-3xl font-bold text-foreground">
           Book a Lesson
         </h1>
-        <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+        <p className="mt-1 text-foreground-muted">
           Schedule your next Response Practice session with an instructor.
         </p>
       </div>
@@ -209,19 +209,19 @@ export default function BookPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-800 dark:bg-zinc-900">
+                  <div className="rounded-lg border border-border bg-background-secondary p-4">
                     <dl className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                        <dt className="text-zinc-500 dark:text-zinc-400">Lesson Type:</dt>
-                        <dd className="font-medium text-zinc-900 dark:text-zinc-100">
+                        <dt className="text-foreground-muted">Lesson Type:</dt>
+                        <dd className="font-medium text-foreground">
                           {lessonType === "response_practice"
                             ? "Response Practice"
                             : "Micro Response Practice"}
                         </dd>
                       </div>
                       <div className="flex justify-between">
-                        <dt className="text-zinc-500 dark:text-zinc-400">Date & Time:</dt>
-                        <dd className="font-medium text-zinc-900 dark:text-zinc-100">
+                        <dt className="text-foreground-muted">Date & Time:</dt>
+                        <dd className="font-medium text-foreground">
                           {selectedSlot.start.toLocaleDateString("en-US", {
                             weekday: "long",
                             month: "long",
@@ -231,8 +231,8 @@ export default function BookPage() {
                         </dd>
                       </div>
                       <div className="flex justify-between">
-                        <dt className="text-zinc-500 dark:text-zinc-400">Duration:</dt>
-                        <dd className="font-medium text-zinc-900 dark:text-zinc-100">
+                        <dt className="text-foreground-muted">Duration:</dt>
+                        <dd className="font-medium text-foreground">
                           {lessonType === "response_practice" ? "30" : "15"} minutes
                         </dd>
                       </div>
@@ -248,7 +248,7 @@ export default function BookPage() {
                     Confirm Booking
                   </Button>
 
-                  <p className="text-center text-xs text-zinc-500 dark:text-zinc-400">
+                  <p className="text-center text-xs text-foreground-muted">
                     A Google Meet link will be created and sent to your email.
                   </p>
                 </div>
@@ -262,7 +262,7 @@ export default function BookPage() {
               <CardTitle>Booking Rules</CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="list-inside list-disc space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <ul className="list-inside list-disc space-y-2 text-sm text-foreground-muted">
                 <li>
                   You can only have one active booking at a time. Complete or
                   cancel your current booking to schedule another.

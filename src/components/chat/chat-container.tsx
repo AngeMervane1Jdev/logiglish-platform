@@ -36,7 +36,7 @@ export function ChatContainer({
   }
 
   return (
-    <div className="flex h-[600px] flex-col rounded-lg border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
+    <div className="flex h-[600px] flex-col rounded-lg border border-border bg-background">
       <MessageList
         messages={messages}
         currentUserId={currentUserId}

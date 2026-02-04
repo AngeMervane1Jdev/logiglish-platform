@@ -25,10 +25,10 @@ export default async function MessagesPage() {
     <div className="space-y-6">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+        <h1 className="text-3xl font-bold text-foreground">
           Messages
         </h1>
-        <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+        <p className="mt-1 text-foreground-muted">
           Contact support or discuss your learning progress.
         </p>
       </div>
@@ -59,7 +59,7 @@ export default async function MessagesPage() {
           <CardTitle>Need Help?</CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+          <ul className="space-y-2 text-sm text-foreground-muted">
             <li>
               <strong>Booking Issues:</strong> If you need to reschedule or have
               questions about your booking, let us know.

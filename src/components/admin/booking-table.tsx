@@ -29,8 +29,8 @@ export function BookingTable({
 }: BookingTableProps) {
   if (bookings.length === 0) {
     return (
-      <div className="rounded-lg border border-zinc-200 bg-white p-8 text-center dark:border-zinc-800 dark:bg-zinc-950">
-        <p className="text-zinc-500 dark:text-zinc-400">No bookings found.</p>
+      <div className="rounded-lg border border-border bg-background p-8 text-center">
+        <p className="text-foreground-muted">No bookings found.</p>
       </div>
     );
   }
@@ -39,9 +39,9 @@ export function BookingTable({
   const someSelected = bookings.some(b => selectedBookings.has(b.id)) && !allSelected;
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-zinc-200 dark:border-zinc-800">
-      <table className="min-w-full divide-y divide-zinc-200 dark:divide-zinc-800">
-        <thead className="bg-zinc-50 dark:bg-zinc-900">
+    <div className="overflow-x-auto rounded-lg border border-border">
+      <table className="min-w-full divide-y divide-border">
+        <thead className="bg-background-secondary">
           <tr>
             <th className="w-12 px-4 py-3">
               <Checkbox
@@ -50,32 +50,32 @@ export function BookingTable({
                 onCheckedChange={onSelectAll}
               />
             </th>
-            <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-zinc-500">
+            <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-foreground-muted">
               Student
             </th>
-            <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-zinc-500">
+            <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-foreground-muted">
               Lesson Type
             </th>
-            <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-zinc-500">
+            <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-foreground-muted">
               Scheduled
             </th>
-            <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-zinc-500">
+            <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-foreground-muted">
               Status
             </th>
-            <th className="px-4 py-3 text-center text-xs font-medium uppercase tracking-wider text-zinc-500">
+            <th className="px-4 py-3 text-center text-xs font-medium uppercase tracking-wider text-foreground-muted">
               Meeting
             </th>
-            <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-zinc-500">
+            <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-foreground-muted">
               Plan
             </th>
-            <th className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wider text-zinc-500">
+            <th className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wider text-foreground-muted">
               Actions
             </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-zinc-200 bg-white dark:divide-zinc-800 dark:bg-zinc-950">
+        <tbody className="divide-y divide-border bg-background">
           {bookings.map((booking) => (
-            <tr key={booking.id} className="hover:bg-zinc-50 dark:hover:bg-zinc-900">
+            <tr key={booking.id} className="hover:bg-accent">
               <td className="w-12 px-4 py-4">
                 <Checkbox
                   checked={selectedBookings.has(booking.id)}
@@ -84,21 +84,21 @@ export function BookingTable({
               </td>
               <td className="whitespace-nowrap px-4 py-4">
                 <div>
-                  <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                  <p className="font-medium text-foreground">
                     {booking.student?.full_name || "Unknown"}
                   </p>
-                  <p className="text-sm text-zinc-500">
+                  <p className="text-sm text-foreground-muted">
                     {booking.student?.email || "No email"}
                   </p>
                 </div>
               </td>
               <td className="whitespace-nowrap px-4 py-4">
-                <span className="text-sm text-zinc-900 dark:text-zinc-50">
+                <span className="text-sm text-foreground">
                   {LESSON_TYPE_LABELS[booking.lesson_type]}
                 </span>
               </td>
               <td className="whitespace-nowrap px-4 py-4">
-                <span className="text-sm text-zinc-900 dark:text-zinc-50">
+                <span className="text-sm text-foreground">
                   {formatDateTime(booking.scheduled_at)}
                 </span>
               </td>
@@ -108,11 +108,11 @@ export function BookingTable({
               <td className="whitespace-nowrap px-4 py-4 text-center">
                 {booking.video_link ? (
                   <div className="inline-flex items-center justify-center">
-                    <Video className="h-4 w-4 text-green-600 dark:text-green-500" title="Meeting link added" />
+                    <span title="Meeting link added"><Video className="h-4 w-4 text-green-600 dark:text-green-500" /></span>
                   </div>
                 ) : (
                   <div className="inline-flex items-center justify-center">
-                    <span className="text-zinc-400 dark:text-zinc-600" title="No meeting link">—</span>
+                    <span className="text-foreground-muted" title="No meeting link">—</span>
                   </div>
                 )}
               </td>

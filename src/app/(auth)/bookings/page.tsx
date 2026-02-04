@@ -59,11 +59,11 @@ async function BookingsList() {
     return (
       <Card>
         <CardContent className="flex flex-col items-center justify-center py-12">
-          <Calendar className="mb-4 h-12 w-12 text-zinc-400" />
-          <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+          <Calendar className="mb-4 h-12 w-12 text-foreground-muted" />
+          <h3 className="text-lg font-semibold text-foreground">
             No bookings yet
           </h3>
-          <p className="mt-1 text-center text-sm text-zinc-500 dark:text-zinc-400">
+          <p className="mt-1 text-center text-sm text-foreground-muted">
             You haven&apos;t scheduled any lessons yet. Book your first session
             to get started!
           </p>
@@ -83,7 +83,7 @@ async function BookingsList() {
       {/* Upcoming Bookings */}
       {upcomingBookings.length > 0 && (
         <div>
-          <h2 className="mb-4 text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="mb-4 text-xl font-semibold text-foreground">
             Upcoming Lessons
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -97,7 +97,7 @@ async function BookingsList() {
       {/* Past Bookings */}
       {pastBookings.length > 0 && (
         <div>
-          <h2 className="mb-4 text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <h2 className="mb-4 text-xl font-semibold text-foreground">
             Past Lessons
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -154,10 +154,10 @@ export default async function BookingsPage({
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h1 className="text-3xl font-bold text-foreground">
             My Bookings
           </h1>
-          <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+          <p className="mt-1 text-foreground-muted">
             View and manage your scheduled lessons.
           </p>
         </div>

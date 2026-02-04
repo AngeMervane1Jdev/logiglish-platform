@@ -43,12 +43,12 @@ export function TimeSlotPicker({
 
   if (availability.length === 0) {
     return (
-      <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-8 text-center dark:border-zinc-800 dark:bg-zinc-900">
-        <Calendar className="mx-auto h-12 w-12 text-zinc-400" />
-        <h3 className="mt-4 text-lg font-medium text-zinc-900 dark:text-zinc-100">
+      <div className="rounded-lg border border-border bg-background-secondary p-8 text-center">
+        <Calendar className="mx-auto h-12 w-12 text-foreground-muted" />
+        <h3 className="mt-4 text-lg font-medium text-foreground">
           No Available Slots
         </h3>
-        <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="mt-2 text-sm text-foreground-muted">
           There are no available time slots in the next two weeks. Please check
           back later or contact support.
         </p>
@@ -67,7 +67,7 @@ export function TimeSlotPicker({
       {/* Date selector */}
       <div>
         <div className="mb-3 flex items-center justify-between">
-          <h3 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+          <h3 className="text-sm font-medium text-foreground-secondary">
             Select a Date
           </h3>
           <div className="flex items-center gap-1">
@@ -124,10 +124,10 @@ export function TimeSlotPicker({
       {/* Time slots */}
       <div>
         <div className="mb-3 flex items-center justify-between">
-          <h3 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+          <h3 className="text-sm font-medium text-foreground-secondary">
             Select a Time
           </h3>
-          <span className="flex items-center gap-1 text-xs text-zinc-500">
+          <span className="flex items-center gap-1 text-xs text-foreground-muted">
             <Clock className="h-3 w-3" />
             {timezone}
           </span>
@@ -156,7 +156,7 @@ export function TimeSlotPicker({
         </div>
 
         {currentDay.slots.length === 0 && (
-          <p className="py-4 text-center text-sm text-zinc-500">
+          <p className="py-4 text-center text-sm text-foreground-muted">
             No available times for this date
           </p>
         )}

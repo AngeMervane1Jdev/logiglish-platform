@@ -44,7 +44,7 @@ export function MessageList({
   if (messages.length === 0) {
     return (
       <div className="flex-1 flex items-center justify-center p-4">
-        <p className="text-zinc-500 dark:text-zinc-400 text-center">
+        <p className="text-foreground-muted text-center">
           No messages yet. Start the conversation!
         </p>
       </div>

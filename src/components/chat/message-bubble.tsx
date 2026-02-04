@@ -25,7 +25,7 @@ export function MessageBubble({ message, isOwnMessage }: MessageBubbleProps) {
       >
         <p className="text-sm whitespace-pre-wrap">{message.content}</p>
       </div>
-      <div className="flex items-center gap-2 mt-1 text-xs text-zinc-500">
+      <div className="flex items-center gap-2 mt-1 text-xs text-foreground-muted">
         <span>{message.author?.full_name || "Unknown"}</span>
         <span>·</span>
         <span>{formatTime(message.created_at)}</span>

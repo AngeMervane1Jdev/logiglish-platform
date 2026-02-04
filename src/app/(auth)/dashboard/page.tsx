@@ -58,10 +58,10 @@ export default async function DashboardPage() {
     <div className="space-y-8">
       {/* Welcome Section */}
       <div>
-        <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+        <h1 className="text-3xl font-bold text-foreground">
           Welcome back, {typedProfile?.full_name?.split(" ")[0] || "Student"}!
         </h1>
-        <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+        <p className="mt-1 text-foreground-muted">
           Here&apos;s an overview of your learning progress.
         </p>
       </div>
@@ -71,13 +71,13 @@ export default async function DashboardPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Active Booking</CardTitle>
-            <Calendar className="h-4 w-4 text-zinc-500" />
+            <Calendar className="h-4 w-4 text-foreground-muted" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {typedActiveBooking ? "1" : "0"}
             </div>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-foreground-muted">
               {typedActiveBooking
                 ? getRelativeTime(typedActiveBooking.scheduled_at)
                 : "No upcoming lessons"}
@@ -88,37 +88,37 @@ export default async function DashboardPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Total Lessons</CardTitle>
-            <BookOpen className="h-4 w-4 text-zinc-500" />
+            <BookOpen className="h-4 w-4 text-foreground-muted" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
               {typedRecentBookings.filter((b) => b.status === "completed").length}
             </div>
-            <p className="text-xs text-zinc-500">Completed sessions</p>
+            <p className="text-xs text-foreground-muted">Completed sessions</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Messages</CardTitle>
-            <MessageSquare className="h-4 w-4 text-zinc-500" />
+            <MessageSquare className="h-4 w-4 text-foreground-muted" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{unreadMessages || 0}</div>
-            <p className="text-xs text-zinc-500">Unread messages</p>
+            <p className="text-xs text-foreground-muted">Unread messages</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Plan</CardTitle>
-            <Clock className="h-4 w-4 text-zinc-500" />
+            <Clock className="h-4 w-4 text-foreground-muted" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold capitalize">
               {typedProfile?.subscription_plan || "Basic"}
             </div>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-foreground-muted">
               {typedProfile?.subscription_plan === "premium"
                 ? "Full access"
                 : "Limited features"}
@@ -243,13 +243,13 @@ export default async function DashboardPage() {
               {typedRecentBookings.map((booking) => (
                 <div
                   key={booking.id}
-                  className="flex items-center justify-between border-b border-zinc-200 pb-4 last:border-0 last:pb-0 dark:border-zinc-800"
+                  className="flex items-center justify-between border-b border-border pb-4 last:border-0 last:pb-0"
                 >
                   <div>
-                    <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                    <p className="font-medium text-foreground">
                       {LESSON_TYPE_LABELS[booking.lesson_type]}
                     </p>
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                    <p className="text-sm text-foreground-muted">
                       {formatDateTime(booking.scheduled_at)}
                     </p>
                   </div>

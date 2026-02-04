@@ -190,23 +190,23 @@ function BookingDetailContent() {
           {/* Date & Time */}
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="flex items-start gap-3">
-              <Calendar className="mt-0.5 h-5 w-5 text-zinc-500" />
+              <Calendar className="mt-0.5 h-5 w-5 text-foreground-muted" />
               <div>
-                <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                <p className="font-medium text-foreground">
                   {formatDate(booking.scheduled_at)}
                 </p>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                <p className="text-sm text-foreground-muted">
                   {getRelativeTime(booking.scheduled_at)}
                 </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Clock className="mt-0.5 h-5 w-5 text-zinc-500" />
+              <Clock className="mt-0.5 h-5 w-5 text-foreground-muted" />
               <div>
-                <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                <p className="font-medium text-foreground">
                   {formatTime(booking.scheduled_at)}
                 </p>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                <p className="text-sm text-foreground-muted">
                   {formatDuration(LESSON_TYPE_DURATIONS[booking.lesson_type])} session
                 </p>
               </div>
@@ -219,7 +219,7 @@ function BookingDetailContent() {
               <div className="flex items-start gap-3">
                 <Video className="mt-0.5 h-5 w-5 text-green-600 dark:text-green-400" />
                 <div className="flex-1">
-                  <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                  <p className="font-medium text-foreground">
                     Google Meet Link
                   </p>
                   <a
@@ -243,7 +243,7 @@ function BookingDetailContent() {
                     </Button>
                   )}
                   {!canJoinVideo && isUpcoming && booking.status === "confirmed" && (
-                    <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                    <p className="mt-2 text-sm text-foreground-muted">
                       Save this link! You can join the call at your scheduled time.
                     </p>
                   )}
@@ -258,10 +258,10 @@ function BookingDetailContent() {
               <div className="flex items-start gap-3">
                 <Video className="mt-0.5 h-5 w-5 text-yellow-600 dark:text-yellow-400" />
                 <div className="flex-1">
-                  <p className="font-medium text-zinc-900 dark:text-zinc-50">
+                  <p className="font-medium text-foreground">
                     Video Link Pending
                   </p>
-                  <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                  <p className="mt-1 text-sm text-foreground-muted">
                     The Google Meet link will be generated once your booking is confirmed.
                   </p>
                 </div>
@@ -272,8 +272,8 @@ function BookingDetailContent() {
           {/* Notes */}
           {booking.notes && (
             <div>
-              <h3 className="font-medium text-zinc-900 dark:text-zinc-50">Notes</h3>
-              <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+              <h3 className="font-medium text-foreground">Notes</h3>
+              <p className="mt-1 text-sm text-foreground-muted">
                 {booking.notes}
               </p>
             </div>
@@ -281,7 +281,7 @@ function BookingDetailContent() {
 
           {/* Actions */}
           {canCancel && (
-            <div className="border-t border-zinc-200 pt-6 dark:border-zinc-800">
+            <div className="border-t border-border pt-6">
               <Button variant="destructive" onClick={() => setShowCancelDialog(true)}>
                 <Trash2 className="mr-2 h-4 w-4" />
                 Cancel Booking
@@ -302,7 +302,7 @@ function BookingDetailContent() {
             </DialogDescription>
           </DialogHeader>
           <div className="py-4">
-            <label className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
+            <label className="text-sm font-medium text-foreground">
               Reason for cancellation <span className="text-red-600">*</span>
             </label>
             <Textarea

@@ -53,7 +53,7 @@ export function MessageInput({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-end gap-2 border-t border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950"
+      className="flex items-end gap-2 border-t border-border bg-background p-4"
     >
       <Textarea
         ref={textareaRef}

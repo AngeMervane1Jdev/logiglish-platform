@@ -217,10 +217,10 @@ export default function AdminBookingsPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+          <h1 className="text-3xl font-bold text-foreground">
             Bookings
           </h1>
-          <p className="mt-1 text-zinc-500 dark:text-zinc-400">
+          <p className="mt-1 text-foreground-muted">
             Manage all student bookings.
           </p>
         </div>
@@ -234,11 +234,11 @@ export default function AdminBookingsPage() {
         <CardContent>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
             <div className="flex-1">
-              <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label className="mb-1 block text-sm font-medium text-foreground-secondary">
                 Search
               </label>
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" />
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-foreground-muted" />
                 <Input
                   placeholder="Search by student name, email, or booking ID..."
                   value={searchQuery}
@@ -248,7 +248,7 @@ export default function AdminBookingsPage() {
               </div>
             </div>
             <div className="w-full sm:w-48">
-              <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              <label className="mb-1 block text-sm font-medium text-foreground-secondary">
                 Status
               </label>
               <Select
@@ -271,7 +271,7 @@ export default function AdminBookingsPage() {
         <Card className="border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-900/20">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
-              <p className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
+              <p className="text-sm font-medium text-foreground">
                 {selectedCount} booking{selectedCount !== 1 ? "s" : ""} selected
               </p>
               <div className="flex items-center gap-2">
@@ -353,7 +353,7 @@ export default function AdminBookingsPage() {
             </DialogDescription>
           </DialogHeader>
           <div className="py-4">
-            <label className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
+            <label className="text-sm font-medium text-foreground">
               Reason for cancellation <span className="text-red-600">*</span>
             </label>
             <Textarea
